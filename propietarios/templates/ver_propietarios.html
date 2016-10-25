@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Propietarios</title>
+</head>
+<body>
+	{% for propietario in propietarios %}
+		<p><span>Nombre:</span> {{propietario.nombre}} </p>
+		<p><span>Apellidos</span> {{propietario.apellidos}} </p>
+		<p><span>Telefono</span> {{propietario.telefono}} </p>
+		<p><span>Celular</span> {{propietario.celular}} </p>
+		<p><span>Facebook</span> {{propietario.facebook}} </p>
+		<p><span>Email</span> {{propietario.email}} </p>
+		<p><span>Whatsapp</span> {{propietario.whatsapp}} </p>
+		<hr>
+	{% endfor %}
+</body>
+</html>
