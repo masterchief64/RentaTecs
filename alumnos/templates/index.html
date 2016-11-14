@@ -1,12 +1,222 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Alumnos</title>
+ 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<title>RentaTec - Inicio</title>
+	<link href="//db.onlinewebfonts.com/c/895ff6ff137584b40827e283a89f1aa1?family=Lavanderia" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+	<link rel="stylesheet" href="{% static "css/main.css" %}">
+
+	<!--[if lt IE 9]>
+	  <script src="js/html5shiv.js"></script>
+	  <script src="js/respond.min.js"></script>
+	<![endif]-->
+ 
+	<link rel="shortcut icon" href="images/favicon.png">
+	<script src="{% static 'js/pace.js' %}"></script>
+ 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-	{% for alumno in alumnos %}
-		<p>Alumno: {alumno.name} </p>
-	{% endfor %}
+	<div class="preloader"></div>
+	
+    <! -- ******************** MASTHEAD SECTION ******************** -->	
+	<main id="top" class="masthead" role="main">
+		<div class="container">
+			<div class="logo"> <a href="index.html#">
+				<h1 class="renta">- RentaTec -</h1>
+			</a>
+			</div>
+ 
+			<h1>El mejor lugar para encontrar<strong> Cuartos, Casas y Departamentos</strong> <br>
+		
+			
+			<p><h3>Ingresar como:</h3></p>
+
+			<!--FORMULARIO-->
+			<!-- Button trigger modal -->
+<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModalHorizontal">
+    Propietario
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Modal title
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form class="form-horizontal" role="form" method="POST">
+                {% csrf_token %}
+				{{ form.as_p }}
+				hola
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default">Sign in</button>
+                    </div>
+                  </div>
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Button trigger modal -->
+<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModalNorm">
+    Alumno
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Modal title
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form role="form">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control"
+                      id="exampleInputEmail1" placeholder="Enter email"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control"
+                          id="exampleInputPassword1" placeholder="Password"/>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                        <input type="checkbox"/> Check me out
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+			<!--FORMULARIO-->	
+
+				<br><br>
+				<a href="index.html#explore" class="scrollto">
+				<p class="scrollto--arrow"><img src="{% static 'images/scroll_down.png' %}" alt="scroll down arrow"></p>
+				<p>Registrarse para publicar</p>
+				
+				</a>
+	
+		</div>
+
+		<! --/container -->
+	</main><! --/main -->
+
+
+ 
+
+ 
+
+	  
+ 
+	    
+ 
+		<div class="container">
+			<section class="row breath">
+				<div class="col-md-12 footerlinks">
+					<p>&copy; 2016 RentaTec. Todos los derechos reservados</p>
+				</div>
+			</section><! --/section -->
+		</div><! --/container -->
+ 
+ 
+ 
+ 
+<script src="{% static 'js/jquery.js' %} "></script>
+<script src="{% static 'js/bootstrap.js' %} "></script>
+<script src="{% static 'js/easing.js' %} "></script>
+<script src="{% static 'js/nicescroll.js' %} "></script>
+
+
+ 
+<script>
+
+
+ $(function() {
+    $('.scrollto, .gototop').bind('click',function(event){
+		 var $anchor = $(this);
+		 $('html, body').stop().animate({
+         scrollTop: $($anchor.attr('href')).offset().top
+          }, 1500,'easeInOutExpo');
+     event.preventDefault();
+      });
+  });
+        
+
+</script>
+ 
 </body>
 </html>
